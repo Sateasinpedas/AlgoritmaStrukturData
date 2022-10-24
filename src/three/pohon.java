@@ -40,7 +40,6 @@ public class pohon<T> {
         return null;
     }
 
-
     public void findParent(Node<T> parent, T data){
         Node <T> current = parent.children == null ? this.root : parent;
 
@@ -73,7 +72,7 @@ public class pohon<T> {
 
             if (currentNode.data == current.data){
                 this.height = counter;
-                System.out.println("Height is: " + counter);
+                System.out.print("Height node is: " );
                 break;
             }
         }

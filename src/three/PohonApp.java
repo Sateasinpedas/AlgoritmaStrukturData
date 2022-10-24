@@ -34,7 +34,10 @@ public class PohonApp {
             p.findParent(p.root, "A");
             p.NodeLevel(p.root, nodeB);
             p.LeafNode(p.root);
-            p.HeightNode("A",)
+            p.HeightNode(p.root, nodeF);
+            System.out.println(p.HeightNode(p.root, nodeD));
+            System.out.println(p.HeightNode(p.root, nodeF));
+
 //            System.out.println("All leaf nodes are " + p.LeafNode(p.root);
 
 
