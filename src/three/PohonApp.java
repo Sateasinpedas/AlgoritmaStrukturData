@@ -29,16 +29,26 @@ public class PohonApp {
             }
 
             p.telusur(p.root);
-
+            //Mencari parent
             p.findParent(p.root, "C");
             p.findParent(p.root, "A");
-            p.NodeLevel(p.root, nodeB);
-            p.LeafNode(p.root);
-            p.HeightNode(p.root, nodeF);
-            System.out.println(p.HeightNode(p.root, nodeD));
-            System.out.println(p.HeightNode(p.root, nodeF));
 
-//            System.out.println("All leaf nodes are " + p.LeafNode(p.root);
+            //mencari
+            p.HeightNode(p.root, nodeF);
+
+            //Mencari level dari tree
+            p.NodeLevel(p.root,nodeB);
+
+            //Mencari Leaf dari tree
+            p.LeafNode(p.root);
+
+            //Mencari non-leaf dari tree
+            p.nonLeafNode(p.root);
+
+            //Mencari siblings dari tree
+            p.Siblings(p.root, "A");
+
+
 
 
         }

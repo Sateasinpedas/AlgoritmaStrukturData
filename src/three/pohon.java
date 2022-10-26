@@ -64,6 +64,23 @@ public class pohon<T> {
         }
     }
 
+    public LinkedList<Node> nonLeafNode(Node<T> parentNode){
+        LinkedList<Node> Linked = new LinkedList<>();
+
+        if(parentNode == this.root && this.root.children.size() !=0){
+            Linked.add(parentNode);
+        }
+
+        for(Node<T> currentNode : parentNode.children){
+            if(currentNode.children.size() != 0) Linked.add(currentNode);
+            nonLeafNode(currentNode);
+        }
+        for(Node<T> currentNode : Linked) {
+            System.out.println("Non Leaf: " + currentNode.data);
+        }
+        return Linked;
+    }
+
     public int HeightNode(Node<T> parent, Node<T> currentNode){
         int counter = this.level;
 
@@ -92,4 +109,22 @@ public class pohon<T> {
             }
             return counter;
         }
+
+        public void Siblings (Node<T> parentNode, T data  ){
+        LinkedList<Node> siblingNode = new LinkedList<>();
+
+        for(Node<T> currentNode : parentNode.children){
+            if(currentNode.data == data) {
+                siblingNode.addAll(parentNode.children);
+                break;
+            } else Siblings(currentNode,data);
+
+            if(siblingNode != null){
+
+            }
+        }
+
+        }
 }
+
+
