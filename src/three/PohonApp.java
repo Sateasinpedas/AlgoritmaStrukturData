@@ -31,13 +31,13 @@ public class PohonApp {
             p.telusur(p.root);
             //Mencari parent
             p.findParent(p.root, "C");
-            p.findParent(p.root, "A");
+            p.findParent(p.root, "F");
 
-            //mencari
-            p.HeightNode(p.root, nodeF);
-
-            //Mencari level dari tree
-            p.NodeLevel(p.root,nodeB);
+//            //mencari
+//            p.HeightNode(p.root, nodeF);
+//
+//            //Mencari level dari tree
+//            p.NodeLevel(p.root,nodeB);
 
             //Mencari Leaf dari tree
             p.LeafNode(p.root);
@@ -47,9 +47,6 @@ public class PohonApp {
 
             //Mencari siblings dari tree
             p.Siblings(p.root, "A");
-
-
-
 
         }
     }

@@ -80,35 +80,34 @@ public class pohon<T> {
         }
         return Linked;
     }
-
-    public int HeightNode(Node<T> parent, Node<T> currentNode){
-        int counter = this.level;
-
-        for(Node<T> current: parent.children){
-            counter--;
-
-            if (currentNode.data == current.data){
-                this.height = counter;
-                System.out.print("Height node is: " );
-                break;
-            }
-        }
-        return this.height;
-    }
-        public int NodeLevel (Node<T> parent, Node<T> currentNode){
-            int counter = 0;
-
-            for(Node<T> current: parent.children){
-                counter++;
-
-                if(currentNode.data == current.data){
-                    this.level = counter;
-                    break;
-                }
-                NodeLevel(current, currentNode);
-            }
-            return counter;
-        }
+//    public int HeightNode(Node<T> parent, Node<T> currentNode){
+//        int counter = this.level;
+//
+//        for(Node<T> current: parent.children){
+//            counter--;
+//
+//            if (currentNode.data == current.data){
+//                this.height = counter;
+//                System.out.print("Height node is: " );
+//                break;
+//            }
+//        }
+//        return this.height;
+//    }
+//        public int NodeLevel (Node<T> parent, Node<T> currentNode){
+//            int counter = 0;
+//
+//            for(Node<T> current: parent.children){
+//                counter++;
+//
+//                if(currentNode.data == current.data){
+//                    this.level = counter;
+//                    break;
+//                }
+//                NodeLevel(current, currentNode);
+//            }
+//            return counter;
+//        }
 
         public void Siblings (Node<T> parentNode, T data  ){
         LinkedList<Node> siblingNode = new LinkedList<>();
@@ -119,11 +118,11 @@ public class pohon<T> {
                 break;
             } else Siblings(currentNode,data);
 
-            if(siblingNode != null){
-
+            if(siblingNode.size() != 0){
+                System.out.println("Siblings: " + parentNode.children);
             }
-        }
 
+        }
         }
 }
 
