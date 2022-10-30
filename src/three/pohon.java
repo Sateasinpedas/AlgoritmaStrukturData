@@ -119,10 +119,31 @@ public class pohon<T> {
             } else Siblings(currentNode,data);
 
             if(siblingNode.size() != 0){
-                System.out.println("Siblings: " + parentNode.children);
+                for(Node S : siblingNode){
+                    if( S.data != data){
+                        System.out.println("Siblings: " + S.data);
+                    }
+                }
             }
 
         }
+        }
+        public void findDescedants(Node<T> parent){
+        if(parent!= null){
+            for(Node<T> currentNode : parent.children){
+                System.out.println("Descedant: " +currentNode.data);
+                findDescedants(currentNode);
+            }
+        } else
+            System.out.println("Parent gabole kosong");
+        }
+
+        public void ancestors(Node<T> parent, T data) {
+            Node<T> nodeAncestor = null;
+
+            if (!data.equals(this.root.data))
+                System.out.println("Ancestor: " + nodeAncestor.data);
+            ancestors(this.root, nodeAncestor.data);
         }
 }
 
