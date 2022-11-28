@@ -1,9 +1,8 @@
 package UTP;
 
-import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class validKah {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

@@ -1,6 +1,6 @@
 package Graph;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class graphList {
     ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
@@ -27,6 +27,41 @@ public class graphList {
                 System.out.printf("%3d", adj.get(s).get(d));
             }
             System.out.println();
+        }
+    }
+
+    public static Stack<Integer> stack = new Stack<>();
+    public static Set<Integer> visited = new HashSet<>();
+    public static Queue<Integer> queue = new LinkedList<>();
+
+    public void dfs(int v) {
+        stack.push(v);
+        System.out.printf("%3d",v);
+        visited.add(v);
+        for(int i = 0; i < adj.get(v).size();i++){
+            int neighbor = adj.get(v).get(i);
+            if (!visited.contains(neighbor)){
+                dfs(neighbor);
+            }
+        }
+        stack.pop();
+    }
+
+    public void bfs(int v){
+        queue.add(v);
+        visited.add(v);
+        System.out.printf("%3d", v);
+        while(!queue.isEmpty()){
+            int current = queue.remove();
+            visited.add(current);
+            for (int i = 0; i < adj.get(current).size();i++){
+                int neighbor = adj.get(current).get(i);
+                if(!visited.contains(neighbor)) {
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                    System.out.printf("%3d", neighbor);
+                }
+            }
         }
     }
 }

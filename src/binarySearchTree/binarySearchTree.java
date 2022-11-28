@@ -68,11 +68,13 @@ public class binarySearchTree <T> {
             n = this.getParent(key, node.right);
         return n;
     }
+
     public void delete(Node<T> node){
         if(node == null) return;
         int degree = this.getDegree(node);
 
         switch (degree){
+            //Degree level 0
             case 0:
                 Node<T> parent = this.getParent(node.key,this.root);
                 if(parent != null){
@@ -82,6 +84,8 @@ public class binarySearchTree <T> {
                         parent.right = null;
                 }
                 break;
+
+                //Degree level 1
             case 1:
                 Node<T> parent2 = this.getParent(node.key,this.root);
                 Node<T> child = (node.left != null) ?
@@ -96,6 +100,17 @@ public class binarySearchTree <T> {
                 if(node.left != null) node.left = null;
                 if(node.right != null) node.right = null;
                 break;
+
+                //Degree level 2
+            case 2:
+                Node<T> parent3 = this.getParent(node.key, this.root);
+                Node<T> child2 = (node.left != null) ? node.left : node.right;
+
+
+//                // putuskan node dari child
+//                if(node.left != null) node.left = null;
+//                if(node.right != null) node.right = null;
         }
+
     }
 }
